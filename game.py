@@ -1,16 +1,19 @@
-from traceback import print_stack
 from computer import Computer
-from player import Player
 from human_player import Human
 
 
 class Game:
     def __init__(self):
+        """
+        Purpose: Initialize player 1 and player 2 objects
+        """
         self.player_two = self.select_player_type()
         self.player_one = Human("Player 1")
 
-
     def select_player_type(self):
+        """
+        Purpose: Choose player two player type (AI or Human)
+        """
         user_input = input('What is player two? Computer or Human? ')
         possible_players = ['human', 'computer']
         final_user_input = user_input.lower()
@@ -18,7 +21,7 @@ class Game:
         if final_user_input not in possible_players:
             print('Invalid input, please type again. ')
             self.select_player_type()
-            
+     
         if final_user_input == 'human':
             return Human("Player 2")
         else:
@@ -32,9 +35,15 @@ class Game:
         self.print_score()
 
     def print_score(self):
+        """
+        Purpose: Prints scoreboard
+        """
         print(f'Player 1 Score: {self.player_one.score}\nPlayer 2 Score: {self.player_two.score}') 
 
     def find_winner(self):
+        """
+        Purpose: Compares player 1 gesture to player 2 gestuer, determine winner
+        """
         player_one_gesture = self.player_one.chosen_gesture
         player_two_gesture = self.player_two.chosen_gesture
 
@@ -81,15 +90,23 @@ class Game:
                 print(f'Player Two Wins!')
                 self.add_to_score(self.player_two)
             
+    def print_game_winner(self):
+        """
+        Purpose: Win a player reaches 2 points, (best 2/3), prints winner of game
+        """
+        if self.player_one.score == 2:
+                print("Player One wins!")
+        elif self.player_two.score == 2:
+            print("Player Two wins!")
+
     def run_game(self):
+        """
+        Purpose: Run game for "best two out of three". 
+        """
         player_scores = [self.player_one.score, self.player_two.score]
         while max(player_scores) != 2:
             self.player_one.choose_gesture()
             self.player_two.choose_gesture()
             self.find_winner()
             player_scores = [self.player_one.score, self.player_two.score]
-            if self.player_one.score == 2:
-                print("Player One wins!")
-            elif self.player_two.score == 2:
-                print("Player Two wins!")
-            
+            self.print_game_winner()

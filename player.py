@@ -6,6 +6,9 @@ class Player:
         self.chosen_gesture = ''
 
     def choose_gesture(self):
+        """
+        Purpose: Chooses gesture by way of polymorphism
+        """
         pass
         
         

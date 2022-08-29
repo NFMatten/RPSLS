@@ -2,10 +2,18 @@ from player import Player
 
 class Human(Player):
     def __init__(self, name):
+        """
+        Purpose: Constructs player object thru inheritance from Player class
+        Parameter: 
+            name: string
+        """
         super().__init__()
         self.name = name
 
     def choose_gesture(self):
+        """
+        Purpose: Allows (human) player to choose gesture
+        """
         print(f"\n{self.name}, select your gesture: ")
         for item in self.gestures:
             print(f'{item}')
