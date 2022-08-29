@@ -1,3 +1,4 @@
+from traceback import print_stack
 from computer import Computer
 from player import Player
 from human_player import Human
@@ -12,12 +13,13 @@ class Game:
     def select_player_type(self):
         user_input = input('What is player two? Computer or Human? ')
         possible_players = ['human', 'computer']
-        user_input.lower()
-        if user_input not in possible_players:
+        final_user_input = user_input.lower()
+        
+        if final_user_input not in possible_players:
             print('Invalid input, please type again. ')
             self.select_player_type()
             
-        if user_input == 'human':
+        if final_user_input == 'human':
             return Human("Player 2")
         else:
             return Computer("Player 2 AI")
@@ -27,7 +29,10 @@ class Game:
         Purpose: Add score to scoreboard
         """
         winner.score += 1
-        print(f'Player 1 Score:  {self.player_one.score} Player 2 Score: {self.player_two.score}')
+        self.print_score()
+
+    def print_score(self):
+        print(f'Player 1 Score: {self.player_one.score}\nPlayer 2 Score: {self.player_two.score}') 
 
     def find_winner(self):
         player_one_gesture = self.player_one.chosen_gesture
@@ -83,4 +88,8 @@ class Game:
             self.player_two.choose_gesture()
             self.find_winner()
             player_scores = [self.player_one.score, self.player_two.score]
+            if self.player_one.score == 2:
+                print("Player One wins!")
+            elif self.player_two.score == 2:
+                print("Player Two wins!")
             

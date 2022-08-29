@@ -5,4 +5,4 @@ new_game.run_game()
 
 
 # print winner
-# score prettier
+# user_input.lower() not working
