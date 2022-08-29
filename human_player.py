@@ -18,6 +18,3 @@ class Human(Player):
 
         return user_input
         
-
-
-# new_human = Human()

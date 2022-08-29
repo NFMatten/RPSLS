@@ -13,5 +13,3 @@ class Computer(Player):
         print(computer_selection)
         return(computer_selection)
 
-   
-computer = Computer()

@@ -1,3 +1,4 @@
+from computer import Computer
 from player import Player
 from human_player import Human
 
@@ -5,7 +6,7 @@ from human_player import Human
 class Game:
     def __init__(self):
         self.player_one = Human()
-        self.player_two = Player("Name2")
+        self.player_two = self.select_player_type()
 
     def clear_scoreboard(self):
         """
@@ -19,6 +20,22 @@ class Game:
         Purpose: Add score to scoreboard
         """
         winner.score += 1
+
+    def select_player_type(self):
+        user_input = input('What is player two? Computer or Human? ')
+        possible_players = ['human', 'computer']
+        user_input.lower()
+        if user_input in possible_players:
+            print('Valid Input')
+        else:
+            print('Invalid input, please type again. ')
+            self.select_player_type()
+
+        if user_input == 'human':
+            return Human()
+        else:
+            return Computer()
+           
 
     def find_winner(self):
         player_one_gesture = self.player_one.chosen_gesture
