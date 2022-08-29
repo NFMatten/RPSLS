@@ -6,7 +6,7 @@ from human_player import Human
 class Game:
     def __init__(self):
         self.player_two = self.select_player_type()
-        self.player_one = Human()
+        self.player_one = Human("Player 1")
 
 
     def select_player_type(self):
@@ -18,15 +18,16 @@ class Game:
             self.select_player_type()
             
         if user_input == 'human':
-            return Human()
+            return Human("Player 2")
         else:
-            return Computer()
+            return Computer("Player 2 AI")
            
     def add_to_score(self, winner):
         """
         Purpose: Add score to scoreboard
         """
         winner.score += 1
+        print(f'Player 1 Score:  {self.player_one.score} Player 2 Score: {self.player_two.score}')
 
     def find_winner(self):
         player_one_gesture = self.player_one.chosen_gesture
@@ -81,3 +82,5 @@ class Game:
             self.player_one.choose_gesture()
             self.player_two.choose_gesture()
             self.find_winner()
+            player_scores = [self.player_one.score, self.player_two.score]
+            

@@ -2,8 +2,9 @@ from player import Player
 from random import choice
 
 class Computer(Player):
-    def __init__(self):
-        super().__init__('ricky')
+    def __init__(self, name):
+        super().__init__()
+        self.name = name
 
     def choose_gesture(self):
         """
