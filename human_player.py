@@ -5,7 +5,7 @@ class Human(Player):
         super().__init__('rick')
 
     def choose_gesture(self):
-    
+  #      print(f"{self.}, select your gesture: ")
         for item in self.gestures:
             print(f'{item}')
         user_input = input('Select a gesture! ')
@@ -14,5 +14,5 @@ class Human(Player):
             print('Invalid input, please type again.')
             self.choose_gesture()
             
-        return user_input
+        self.chosen_gesture = user_input
         
