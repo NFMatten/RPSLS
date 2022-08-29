@@ -1,6 +1,6 @@
 from player import Player
 
-class Scoreboard:
+class Game:
     def __init__(self):
         player_one = Player("Name")
         player_two = Player("Name2")

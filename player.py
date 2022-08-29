@@ -14,14 +14,3 @@ class Player:
         Purpose: Player chooses gesture
         """
         
-    def is_player_two_ai(self):
-        user_input = input("Is player 2 a computer or player? ")
-        if user_input == "computer":
-            pass
-            #then create computer player object
-        elif user_input == "player":
-            pass
-            #then create player object
-        else:
-            pass
-            #invalid input
