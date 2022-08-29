@@ -17,23 +17,3 @@ class Scoreboard:
         Purpose: Add score to scoreboard
         """
         winner.score += 1
-
-
-
-
-class game_board:
-    def __init__(self):
-        player_one = Player("Name", player)
-        player_two = Player("Name", computer)
-    
-    def display_welcome(self):
-        print("Welcome")
-
-    def battle_phase(self):
-        pass
-
-    def scoreboard(self):
-        pass
-
-    def display_winner(self):
-        pass
