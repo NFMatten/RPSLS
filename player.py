@@ -3,6 +3,7 @@ class Player:
         self.name = name
         self.score = 0
         self.gestures = ["rock", "paper", "scissors", "lizard", "spock"]
+        self.chosen_gesture = self.choose_gesture()
 
     def player_scoring(self):
         """
@@ -13,4 +14,7 @@ class Player:
         """
         Purpose: Player chooses gesture
         """
+
+    def choose_gesture(self):
+        pass
         

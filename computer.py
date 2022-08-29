@@ -3,16 +3,15 @@ from random import choice
 
 class Computer(Player):
     def __init__(self):
-        super().__init__()
+        super().__init__('ricky')
 
-    def random_gesture_selection(self):
+    def choose_gesture(self):
         """
         Purpose: Randomly selects gesture from list
         """
-        # computer_selection = choice.LIST
+        computer_selection = choice(self.gestures)
+        print(computer_selection)
+        return(computer_selection)
 
-    def computer_scoring(self):
-        """
-        Purpose: If computer wins round, +1 to their score
-        """
-        
+   
+computer = Computer()
