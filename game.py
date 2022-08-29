@@ -25,12 +25,10 @@ class Game:
         user_input = input('What is player two? Computer or Human? ')
         possible_players = ['human', 'computer']
         user_input.lower()
-        if user_input in possible_players:
-            print('Valid Input')
-        else:
+        if user_input not in possible_players:
             print('Invalid input, please type again. ')
             self.select_player_type()
-
+            
         if user_input == 'human':
             return Human()
         else:
@@ -42,17 +40,45 @@ class Game:
         player_two_gesture = self.player_two.chosen_gesture
 
         if player_one_gesture == player_two_gesture:
-            print('Invalid input')
+            print('It was a Tie!')
 
         if player_one_gesture == 'rock':
             if player_two_gesture == 'scissors' or player_two_gesture == 'lizard':
-                print('')
+                print(f'Player One Wins!')
+                self.add_to_score(self.player_one.score)
+            else:
+                print(f'Player Two Wins!')
+                self.add_to_score(self.player_two.score)
+        
         if player_one_gesture == 'paper':
-            pass
+            if player_two_gesture == 'rock' or player_two_gesture == 'spock':
+                print(f'Player One Wins!')
+                self.add_to_score(self.player_one.score)
+            else:
+                print(f'Player Two Wins!')
+                self.add_to_score(self.player_two.score)
+
         if player_one_gesture == 'scissors':
-            pass
+            if player_two_gesture == 'paper' or player_two_gesture == 'lizard':
+                print(f'Player One Wins!')
+                self.add_to_score(self.player_one.score)
+            else:
+                print(f'Player Two Wins!')
+                self.add_to_score(self.player_two.score)
+
         if player_one_gesture == 'lizard':
-            pass
+            if player_two_gesture == 'paper' or player_two_gesture == 'spock':
+                print(f'Player One Wins!')
+                self.add_to_score(self.player_one.score)
+            else:
+                print(f'Player Two Wins!')
+                self.add_to_score(self.player_two.score)
+
         if player_one_gesture == 'spock':
-            pass
+            if player_two_gesture == 'scissors' or player_two_gesture == 'rock':
+                print(f'Player One Wins!')
+                self.add_to_score(self.player_one.score)
+            else:
+                print(f'Player Two Wins!')
+                self.add_to_score(self.player_two.score)
             

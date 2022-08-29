@@ -10,11 +10,9 @@ class Human(Player):
             print(f'{item}')
         user_input = input('Select a gesture! ')
         user_input.lower()
-        if user_input in self.gestures:
-            print('Valid Input')
-        else:
+        if user_input not in self.gestures:
             print('Invalid input, please type again.')
             self.choose_gesture()
-
+            
         return user_input
         
