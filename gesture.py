@@ -1,7 +1,8 @@
 from random import choice
 
 class Gesture():
-    def __init__(self):
+    def __init__(self, user_choice):
+        self.user_choice = self.change_gesture(user_choice)
         self.name = ''
         self.gesture_beats = []
         self.possible_gestures = {
