@@ -20,14 +20,16 @@ class Human(Player):
         user_input = input('Select a gesture! ')
         final_user_input = user_input.lower()
 
+        list_of_names = []
         for item in self.gestures:
-            gesture_names = []
-            gesture_names.append(item.name)
-            if final_user_input not in gesture_names:
+            gesture_name = item.name
+            list_of_names.append(gesture_name)
+        
+            if final_user_input not in list_of_names:
                 print('Invalid input, please type again.')
                 final_user_input = self.choose_gesture()
-            elif item.name == final_user_input:
-                return item 
+            elif final_user_input == gesture_name:
+                return item
             else:
                 print('User input was not equal to a gesture!')
         
