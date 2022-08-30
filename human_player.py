@@ -15,8 +15,8 @@ class Human(Player):
         Purpose: Allows (human) player to choose gesture
         """
         print(f"\n{self.name}, select your gesture: ")
-        for item in self.gesture_names:
-            print(f'{item}')
+        for item in self.gestures:
+            print(f'{item.name}')
         user_input = input('Select a gesture! ')
         final_user_input = user_input.lower()
 

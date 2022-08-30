@@ -11,8 +11,7 @@ class Player:
         self.name = ''
         self.score = 0
         self.gestures = [Rock(), Paper(), Scissors(), Lizard(), Spock()]
-        self.gesture_object = Gesture()
-        self.select_gesture = None
+        self.selected_gesture = None
 
     def choose_gesture(self):
         """

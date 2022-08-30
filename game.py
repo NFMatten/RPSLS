@@ -36,10 +36,10 @@ class Game:
         """
         Purpose: Compares player 1 gesture to player 2 gestuer, determine winner
         """
-        if self.player_two.gesture_object.name in self.player_one.gesture_object.gesture_beats:
+        if self.player_two.selected_gesture.name in self.player_one.selected_gesture.gesture_beats:
             print("Player one wins")
             self.add_to_score(self.player_one)
-        elif self.player_one.gesture_object.name in self.player_two.gesture_object.gesture_beats:
+        elif self.player_one.selected_gesture.name in self.player_two.selected_gesture.gesture_beats:
             print("Player two wins")
             self.add_to_score(self.player_two)
         else:
@@ -58,10 +58,8 @@ class Game:
         """
         player_scores = [self.player_one.score, self.player_two.score]
         while max(player_scores) != 2:
-            self.player_one.gesture_object.change_gesture(self.player_one.choose_gesture())
-            self.player_two.gesture_object.change_gesture(self.player_two.choose_gesture())
+            self.player_two.selected_gesture = self.player_two.choose_gesture() 
+            self.player_one.selected_gesture = self.player_one.choose_gesture() 
             self.find_winner()
             player_scores = [self.player_one.score, self.player_two.score]
             self.print_game_winner()
-
-# delete
