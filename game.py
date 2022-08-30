@@ -53,54 +53,7 @@ class Game:
             self.add_to_score(self.player_two)
         else:
             print('It was a Tie!')
-
-        
-        # player_one_gesture = self.player_one.chosen_gesture
-        # player_two_gesture = self.player_two.chosen_gesture
-
-        # if player_one_gesture == player_two_gesture:
-        #     print('It was a Tie!')
-
-        # elif player_one_gesture == 'rock':
-        #     if player_two_gesture == 'scissors' or player_two_gesture == 'lizard':
-        #         print(f'Player One Win The Round!')
-        #         self.add_to_score(self.player_one)
-        #     else:
-        #         print(f'Player Two Wins The Round!')
-        #         self.add_to_score(self.player_two)
-        
-        # elif player_one_gesture == 'paper':
-        #     if player_two_gesture == 'rock' or player_two_gesture == 'spock':
-        #         print(f'Player One Wins The Round!')
-        #         self.add_to_score(self.player_one)
-        #     else:
-        #         print(f'Player Two Wins The Round!')
-        #         self.add_to_score(self.player_two)
-
-        # elif player_one_gesture == 'scissors':
-        #     if player_two_gesture == 'paper' or player_two_gesture == 'lizard':
-        #         print(f'Player One Wins The Round!')
-        #         self.add_to_score(self.player_one)
-        #     else:
-        #         print(f'Player Two Wins The Round!')
-        #         self.add_to_score(self.player_two)
-
-        # elif player_one_gesture == 'lizard':
-        #     if player_two_gesture == 'paper' or player_two_gesture == 'spock':
-        #         print(f'Player One Wins The Round!')
-        #         self.add_to_score(self.player_one)
-        #     else:
-        #         print(f'Player Two Wins The Round!')
-        #         self.add_to_score(self.player_two)
-
-        # elif player_one_gesture == 'spock':
-        #     if player_two_gesture == 'scissors' or player_two_gesture == 'rock':
-        #         print(f'Player One Wins The Round!')
-        #         self.add_to_score(self.player_one)
-        #     else:
-        #         print(f'Player Two Wins The Round!')
-        #         self.add_to_score(self.player_two)
-            
+  
     def print_game_winner(self):
         """
         Purpose: Win a player reaches 2 points, (best 2/3), prints winner of game
