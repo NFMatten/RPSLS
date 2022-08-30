@@ -16,6 +16,6 @@ class Computer(Player):
         Purpose: Randomly selects gesture from list
         """
         computer_selection = choice(self.gestures)
-        print(f'Computer chose {computer_selection}')
+        print(f'Computer chose {computer_selection.name}')
         return computer_selection
 

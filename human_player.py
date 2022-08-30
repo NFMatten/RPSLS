@@ -15,13 +15,19 @@ class Human(Player):
         Purpose: Allows (human) player to choose gesture
         """
         print(f"\n{self.name}, select your gesture: ")
-        for item in self.gestures:
+        for item in self.gesture_names:
             print(f'{item}')
         user_input = input('Select a gesture! ')
         final_user_input = user_input.lower()
-        if final_user_input not in self.gestures:
-            print('Invalid input, please type again.')
-            final_user_input = self.choose_gesture()
-            
-        return final_user_input
+
+        for item in self.gestures:
+            gesture_names = []
+            gesture_names.append(item.name)
+            if final_user_input not in gesture_names:
+                print('Invalid input, please type again.')
+                final_user_input = self.choose_gesture()
+            elif item.name == final_user_input:
+                return item 
+            else:
+                print('User input was not equal to a gesture!')
         
