@@ -18,10 +18,10 @@ class Human(Player):
         for item in self.gestures:
             print(f'{item}')
         user_input = input('Select a gesture! ')
-        user_input.lower()
-        if user_input not in self.gestures:
+        final_user_input = user_input.lower()
+        if final_user_input not in self.gestures:
             print('Invalid input, please type again.')
             self.choose_gesture()
             
-        self.chosen_gesture = user_input
+        self.chosen_gesture = final_user_input
         
