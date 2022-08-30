@@ -21,7 +21,7 @@ class Human(Player):
         final_user_input = user_input.lower()
         if final_user_input not in self.gestures:
             print('Invalid input, please type again.')
-            self.choose_gesture()
+            final_user_input = self.choose_gesture()
             
         return final_user_input
         
