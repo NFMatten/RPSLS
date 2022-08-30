@@ -17,5 +17,5 @@ class Computer(Player):
         """
         computer_selection = choice(self.gestures)
         print(f'Computer chose {computer_selection}')
-        self.chosen_gesture = computer_selection
+        return computer_selection
 

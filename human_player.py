@@ -23,5 +23,5 @@ class Human(Player):
             print('Invalid input, please type again.')
             self.choose_gesture()
             
-        self.chosen_gesture = final_user_input
+        return final_user_input
         
